@@ -1,0 +1,39 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <h3>Crear Estudiante</h3>
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5>Agregar Estudiante</h5>
+
+                    <div class="spinner-border float-right" role="status">
+                        <span *ngIf="loading" class="sr-only">Cargando...</span>
+                    </div>
+
+                    <span *ngIf="submitted && createEstudiante.invalid">*Todos los campos son obligatorios</span><br>
+                    <form class="mt-4" [formGroup]="createEstudiante" (ngSubmit)="agregarEditarEstudiante()">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" 
+                                formControlName="nombre" placeholder="nombre">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" formControlName="apellido" placeholder="Apellido">
+                            </div>
+                        </div>
+                        <input type="number" class="form-control form-control-lg mt-3" formControlName="ci" placeholder="Carnet">
+                        <input type="text" class="form-control form-control-lg mt-3" formControlName="carrera" placeholder="Carrera">
+                        <input type="number" class="form-control form-control-lg mt-3" formControlName="telefono" placeholder="Teléfono">
+                        <input type="text" class="form-control form-control-lg mt-3" formControlName="email" placeholder="E-mail">
+                        <div class="mt-3">
+                            <button type="text" class="btn btn-secondary btn-lg" style="margin-right: 10px;" routerLink="/list-estudiantes">Volver</button>
+                            <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
